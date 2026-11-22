@@ -4,3 +4,19 @@ services:
     container_name: kafka
     ports:
       - "9092:9092"
+
+  postgres:
+    image: postgres:17
+    container_name: postgres
+    environment:
+      POSTGRES_USER: detector
+      POSTGRES_PASSWORD: detector
+      POSTGRES_DB: anomalies
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./db/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
+
+volumes:
+  pgdata:
