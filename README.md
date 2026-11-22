@@ -88,24 +88,24 @@ All `/v1` endpoints require an `X-API-Key` header.
 
 ```bash
 curl -s -H "X-API-Key: dev-secret-key" \
-  "http://localhost:8000/v1/alerts?rule=large_upload&limit=2"
+  "http://localhost:8000/v1/alerts?rule=large_upload&limit=1"
 ```
 
 ```json
 {
-  "items": [
-    {
-      "alert_id": "6f1c2a9e-8d4b-4f3e-9a1c-2b7e5d0c8f13",
-      "detected_at": "2026-11-22T03:41:07.218Z",
-      "event_timestamp": "2026-11-22T03:41:07.193Z",
-      "user_id": "user_024",
-      "rule": "large_upload",
-      "severity": "critical",
-      "details": "142.3 MB to exfil-drop.example (z-score 9870, user avg 25 KB)",
-      "event_id": "d2a7b1c4-5e6f-4a8b-9c0d-1e2f3a4b5c6d"
-    }
-  ],
-  "next_cursor": "MjAyNi0xMS0yMlQwMzo0MTowNy4yMThafDZmMWMy..."
+    "items": [
+        {
+            "alert_id": "4c2128b8-009c-4733-ac9b-3a7efad6b22a",
+            "detected_at": "2026-11-22T03:11:46.795391Z",
+            "event_timestamp": "2026-11-22T03:11:46.774891Z",
+            "user_id": "user_033",
+            "rule": "large_upload",
+            "severity": "critical",
+            "details": "182.0 MB to exfil-drop.example (z-score 12,667, user avg 24 KB)",
+            "event_id": "d9ec2c04-cbfa-45c7-908a-6845d4a4b18a"
+        }
+    ],
+    "next_cursor": "MjAyNi0xMS0yMlQwMzoxMTo0Ni43OTUzOTErMDA6MDB8NGMyMTI4YjgtMDA5Yy00NzMzLWFjOWItM2E3ZWZhZDZiMjJh"
 }
 ```
 
