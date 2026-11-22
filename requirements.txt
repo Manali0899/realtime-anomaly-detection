@@ -1,2 +1,5 @@
 confluent-kafka
 psycopg[binary]
+fastapi
+uvicorn[standard]
+psycopg-pool
